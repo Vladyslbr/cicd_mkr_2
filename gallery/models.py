@@ -18,9 +18,9 @@ class Category(models.Model):
 class Image(models.Model):
     title = models.CharField(max_length=400)
     image = models.ImageField(upload_to='project_images', blank=True, null=True)
-    categories = models.ManyToManyField(Category)
-    created_date = models.DateField(auto_now_add=True)
-    age_limit = models.PositiveIntegerField(null=True)
+    categories = models.ManyToManyField(Category, blank=True)
+    created_date = models.DateField()
+    age_limit = models.PositiveIntegerField()
 
-    def __str__(self):
-        return title
+    # def __str__(self):
+    #     return title
